@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovate Engineering College</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Header section with background image */
+        header {
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            z-index: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: scale(1.1);
+            color: #ff6347;
+        }
+
+        header p {
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            z-index: 1;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        header button {
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 25px;
+            z-index: 1;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        header button:hover {
+            background-color: #ff4500;
+            transform: scale(1.05);
+        }
+
+        /* Navigation styles */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #004080;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff6347;
+        }
+
+        /* Container for content sections */
+        .container {
+            max-width: 1200px;
+            margin:70px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Sections with vibrant headings */
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #004080;
+            border-left: 5px solid #ff6347;
+            padding-left: 15px;
+            transition: color 0.3s ease;
+        }
+
+        h2:hover {
+            color: #ff4500;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Course Section */
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .course {
+            flex: 1 1 calc(50% - 60px);
+            padding: 20px;
+            background-color: #f0f4f8;
+            border-left: 5px solid #ff6347;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course:hover {
+            background-color: #e0ebf5;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #004080;
+        }
+
+        .course p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #004080;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            margin-top:70px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #ff6347;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to ABC  Engineering College</h1>
+        <p>Empowering Engineers for a Better Tomorrow</p>
+        <button>Discover Our Pathways</button>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#programs">Academic Programs</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#campus-life">Campus Life</a>
+        <a href="#research">Research & Innovation</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <!-- Main Content Sections -->
+    <div class="container" id="home">
+        <h2>Home - Innovating the Future</h2>
+        <p>Welcome to Innovate Engineering College, a hub of creativity and technological advancement. We cultivate leaders in engineering by providing state-of-the-art facilities, diverse academic programs, and a dynamic campus life. Join us in our mission to innovate for a brighter future.</p>
+    </div>
+
+    <div class="container" id="about">
+        <h2>About Us - Our Legacy of Excellence</h2>
+        <p>Established in [Year], Innovate Engineering College has a rich history of fostering innovation and excellence. Our mission is to empower students with the skills and knowledge to thrive in the modern world. Meet our esteemed faculty and explore the values that drive us forward.</p>
+    </div>
+
+    <div class="container" id="programs">
+        <h2>Academic Programs - Shaping Minds, Shaping the Future</h2>
+        <p>Our college offers a range of engineering programs designed to equip students with the skills needed to excel in their chosen fields. Whether you're interested in Mechanical Engineering, Computer Science, Electrical Engineering, or another discipline, we have a program for you.</p>
+    </div>
+
+    <div class="container" id="admissions">
+        <h2>Admissions - Your Journey Starts Here</h2>
+        <p>Take the first step toward a rewarding career by joining Innovate Engineering College. Our admissions process is designed to be straightforward and accessible. Learn about our eligibility criteria, application deadlines, and take a virtual tour of our campus to get a feel for life at Innovate.</p>
+    </div>
+
+    <div class="container" id="campus-life">
+        <h2>Campus Life - A Community of Innovators</h2>
+        <p>Life at Innovate Engineering College is vibrant and full of opportunities. From student clubs to sports and extracurricular activities, there's something for everyone. Explore our campus through our gallery and hear from students about their experiences.</p>
+    </div>
+
+    <div class="container" id="research">
+        <h2>Research & Innovation - Pioneering New Frontiers</h2>
+        <p>At Innovate Engineering College, research and innovation are at the heart of everything we do. Our faculty and students work on cutting-edge projects that push the boundaries of what's possible. Discover our research centers and partnerships that drive innovation.</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container" id="gallery">
+        <h2>Gallery - A Glimpse into Our World</h2>
+        <div class="gallery">
+            <img src="classroom.png" alt="Classroom">
+            <img src="library.png" alt="Library">
+            <img src="campus.png" alt="Campus">
+            <img src="labb.png" alt="Laboratory">
+            <img src="sports.png" alt="Sports">
+            <img src="stu.png" alt="Students">
+        </div>
+    </div>
+    <!-- Course Section with Logos -->
+<div class="container" id="courses">
+    <h2>Courses - Explore Your Path</h2>
+    <div class="courses">
+        <div class="course">
+            <img src="cse.png" alt="CSE Logo" style="width:70px; height:70px; vertical-align: middle; margin-right: 10px;">
+            <h3 style="display: inline-block;">Computer Science Engineering (CSE)</h3>
+            <p><strong>Undergraduate:</strong> B.Tech in Computer Science Engineering</p>
+            <p><strong>Postgraduate:</strong> M.Tech in Computer Science Engineering</p>
+        </div>
+        <div class="course">
+            <img src="ece.png" alt="ECE Logo" style="width:70px; height:70px; vertical-align: middle; margin-right: 10px;">
+            <h3 style="display: inline-block;">Electronics & Communication Engineering (ECE)</h3>
+            <p><strong>Undergraduate:</strong> B.Tech in Electronics & Communication Engineering</p>
+            <p><strong>Postgraduate:</strong> M.Tech in Electronics & Communication Engineering</p>
+        </div>
+        <div class="course">
+            <img src="eee.png" alt="EEE Logo" style="width:70px; height:70px; vertical-align: middle; margin-right: 10px;">
+            <h3 style="display: inline-block;">Electrical & Electronics Engineering (EEE)</h3>
+            <p><strong>Undergraduate:</strong> B.Tech in Electrical & Electronics Engineering</p>
+            <p><strong>Postgraduate:</strong> M.Tech in Electrical & Electronics Engineering</p>
+        </div>
+        <div class="course">
+            <img src="mech.png" alt="Mechanical Logo" style="width:70px; height:70px; vertical-align: middle; margin-right: 10px;">
+            <h3 style="display: inline-block;">Mechanical Engineering</h3>
+            <p><strong>Undergraduate:</strong> B.Tech in Mechanical Engineering</p>
+            <p><strong>Postgraduate:</strong> M.Tech in Mechanical Engineering</p>
+        </div>
+        <div class="course">
+            <img src="civil.png" alt="Civil Logo" style="width:70px; height:70px; vertical-align: middle; margin-right: 10px;">
+            <h3 style="display: inline-block;">Civil Engineering</h3>
+            <p><strong>Undergraduate:</strong> B.Tech in Civil Engineering</p>
+            <p><strong>Postgraduate:</strong> M.Tech in Civil Engineering</p>
+        </div>
+    </div>
+</div>
+
+
+
+    
+
+    <div class="container" id="contact">
+        <h2>Contact Us - We're Here to Help</h2>
+        <p>If you have any questions or need more information, don't hesitate to reach out to us. Find our location, contact details, and send us your inquiries through our contact form. Our team is here to assist you with anything you need.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Innovate Engineering College. All rights reserved.</p>
+        <p>Follow us on <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a></p>
+    </footer>
+
+</body>
+</html>
